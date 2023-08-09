@@ -3,15 +3,15 @@ import {ColorTypes} from './types';
 export const colors: ColorTypes = {
   foreground: {
     primary: '#776897',
-    secondary: '',
+    secondary: '#944db2',
     accent: '',
     text: '#0c0c0d',
     lightText: '#6f6e72',
     title: '#000000',
   },
   background: {
-    primary: '#e7e7e7',
-    secondary: '',
+    secondary: '#ecedec',
+    primary: '#fafafa',
     accent: '',
     buttonPrimary: '#944db2',
     buttonSecondary: '',

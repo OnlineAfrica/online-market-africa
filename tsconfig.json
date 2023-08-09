@@ -10,6 +10,7 @@
       "es2019"
     ],
     "noUnusedLocals": true,
+    "resolveJsonModule": true,
     "noImplicitAny": true,
     "moduleResolution": "node",
     "noEmit": true,
