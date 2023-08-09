@@ -1,8 +1,14 @@
-import React from "react";
+import {Typography} from 'components/Typography/Typography.component';
+import React from 'react';
+import {useTheme} from 'styled-components/native';
 
 export const Home = () => {
-    return (
-        <>
-        </>
-    )
+  const theme = useTheme();
+
+  console.log(theme.font.variant);
+  return (
+    <>
+      <Typography variant="body1">Test</Typography>
+    </>
+  );
 };
