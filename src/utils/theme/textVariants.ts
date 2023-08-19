@@ -10,9 +10,10 @@ export const Heading = styled.Text`
 
 export const SubTitle = styled.Text`
   color: ${({theme}) => theme.colors.foreground.lightText};
-  font-size: ${({theme}) => theme.font.fontSize.l}px;
+  font-size: ${({theme}) => theme.font.fontSize.m}px;
   font-family: Arial;
-  font-weight: 500;
+  font-weight: 400;
+  text-transform: uppercase;
 `;
 
 export const Body1 = styled.Text`
@@ -30,10 +31,10 @@ export const Body2 = styled.Text`
 `;
 
 export const Accent = styled.Text`
-  color: ${({theme}) => theme.colors.foreground.primary};
-  font-size: ${({theme}) => theme.font.fontSize.m}px;
+  color: ${({theme}) => theme.colors.foreground.secondary};
+  font-size: ${({theme}) => theme.font.fontSize.s}px;
   font-family: Arial;
-  font-weight: 500;
+  font-weight: 300;
 `;
 
 export const textVariants: ThemeVariantTypes = {
