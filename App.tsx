@@ -4,11 +4,14 @@ import React from 'react';
 import {ThemeProvider} from 'styled-components/native';
 import {theme} from 'utils/theme/theme';
 import {AppRouting} from 'routing/AppRouting/AppRouting.route';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 function App(): JSX.Element {
   return (
     <ThemeProvider theme={theme}>
-      <AppRouting />
+      <SafeAreaProvider>
+        <AppRouting />
+      </SafeAreaProvider>
     </ThemeProvider>
   );
 }
