@@ -17,14 +17,13 @@ export const AppTabs = () => {
         tabBarActiveTintColor: theme.colors.foreground.secondary,
         tabBarInactiveTintColor: theme.colors.foreground.primary,
         tabBarStyle: {
-          backgroundColor: theme.colors.background.secondary,
-          height: 50,
+          backgroundColor: theme.colors.background.primary,
+          height: '10%',
         },
         tabBarShowLabel: false,
         headerShadowVisible: false,
         headerTitleAlign: 'center',
         headerStyle: {
-          height: 70,
           backgroundColor: theme.colors.background.primary,
         },
       }}>
