@@ -3,11 +3,12 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Home} from 'screens/Home/Home.screen';
 import {Account} from 'screens/Account/Account.screen';
-import {AppTabRouting} from 'routing/routing.types';
+import {AppTab, AppTabRouting} from 'routing/routing.types';
 import {useTheme} from 'styled-components/native';
 import HomeIcon from '../../assets/icons/home.svg';
+import {HomeNavigator} from 'routing/HomeRouting/HomeNavigator.route';
 
-const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator<AppTab>();
 
 export const AppTabs = () => {
   const theme = useTheme();
@@ -28,8 +29,8 @@ export const AppTabs = () => {
         },
       }}>
       <Tab.Screen
-        name={AppTabRouting.Home}
-        component={Home}
+        name={AppTabRouting.HomeNav}
+        component={HomeNavigator}
         options={{
           title: 'Shop',
           tabBarIcon: ({color, size}) => (

@@ -18,16 +18,23 @@ export const SubTitle = styled.Text`
 
 export const Body1 = styled.Text`
   color: ${({theme}) => theme.colors.foreground.text};
-  font-size: ${({theme}) => theme.font.fontSize.m}px;
+  font-size: ${({theme}) => theme.font.fontSize.l}px;
   font-family: Arial;
   font-weight: 400;
 `;
 
 export const Body2 = styled.Text`
   color: ${({theme}) => theme.colors.foreground.text};
+  font-size: ${({theme}) => theme.font.fontSize.m}px;
+  font-family: Arial;
+  font-weight: 500;
+`;
+
+export const Body3 = styled.Text`
+  color: ${({theme}) => theme.colors.foreground.text};
   font-size: ${({theme}) => theme.font.fontSize.s}px;
   font-family: Arial;
-  font-weight: 400;
+  font-weight: 500;
 `;
 
 export const Accent = styled.Text`
@@ -42,5 +49,6 @@ export const textVariants: ThemeVariantTypes = {
   subtitle: SubTitle,
   body1: Body1,
   body2: Body2,
+  body3: Body3,
   accent: Accent,
 };
