@@ -9,8 +9,10 @@ export interface ColorTypes {
     text: string;
     lightText: string;
     title: string;
+    star: string;
   };
   background: {
+    app: string;
     primary: string;
     secondary: string;
     accent: string;
@@ -21,6 +23,7 @@ export interface ColorTypes {
     buttonPressedSecondary: string;
     buttonPressedAccent: string;
   };
+  white: string;
 }
 
 export interface FontSizeTypes {
@@ -39,6 +42,7 @@ export interface ThemeVariantTypes {
   subtitle: IStyledComponent<'native', Omit<TextProps, never>>;
   body1: IStyledComponent<'native', Omit<TextProps, never>>;
   body2: IStyledComponent<'native', Omit<TextProps, never>>;
+  body3: IStyledComponent<'native', Omit<TextProps, never>>;
   accent: IStyledComponent<'native', Omit<TextProps, never>>;
 }
 

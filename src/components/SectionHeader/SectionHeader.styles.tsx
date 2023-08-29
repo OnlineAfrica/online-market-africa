@@ -8,3 +8,5 @@ export const Container = styled.View`
   align-items: center;
   text-align: center;
 `;
+
+export const SectionButtonContainer = styled.TouchableOpacity``;

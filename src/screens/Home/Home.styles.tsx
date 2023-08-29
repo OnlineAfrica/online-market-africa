@@ -9,3 +9,7 @@ export const StyleableImage = styled.Image`
   width: 100%;
   height: 150px;
 `;
+
+export const ProductCardContainer = styled.View`
+  margin: ${({theme}) => theme.spacing.m}px;
+`;
