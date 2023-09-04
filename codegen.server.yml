@@ -1,0 +1,7 @@
+schema:
+  - './server/schema/schema.graphql'
+documents: null
+generates:
+  ./server/generated/schema.ts:
+    plugins:
+      - typescript
