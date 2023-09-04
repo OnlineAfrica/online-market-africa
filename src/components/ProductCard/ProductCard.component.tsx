@@ -55,7 +55,7 @@ export const ProductCard = ({
             color={theme.colors.foreground.star}
           />
           <Typography variant="body3">
-            {rating === '0' ? 'No Reviews yet' : rating}
+            {rating === '0' || !rating ? 'No Reviews yet' : rating}
           </Typography>
         </RatingContainer>
       </ContentContainer>
