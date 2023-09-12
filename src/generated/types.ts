@@ -24,6 +24,7 @@ export type Scalars = {
 
 export type Product = {
   __typename?: 'Product';
+  description?: Maybe<Scalars['String']['output']>;
   id: Scalars['ID']['output'];
   images: Array<Scalars['String']['output']>;
   price: Scalars['Float']['output'];

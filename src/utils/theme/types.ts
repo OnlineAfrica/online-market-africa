@@ -47,6 +47,7 @@ export interface ThemeVariantTypes {
 }
 
 export interface Spacing {
+  tiny: number;
   xxs: number;
   xs: number;
   s: number;
@@ -54,6 +55,7 @@ export interface Spacing {
   l: number;
   xl: number;
   xxl: number;
+  b: number;
 }
 
 export interface ThemeTypes {

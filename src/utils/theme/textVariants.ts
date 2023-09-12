@@ -27,7 +27,7 @@ export const Body2 = styled.Text`
   color: ${({theme}) => theme.colors.foreground.text};
   font-size: ${({theme}) => theme.font.fontSize.m}px;
   font-family: Arial;
-  font-weight: 500;
+  font-weight: 300;
 `;
 
 export const Body3 = styled.Text`

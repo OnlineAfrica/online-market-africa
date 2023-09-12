@@ -14,6 +14,7 @@ export type ProductsQuery = {
     price: number;
     images: Array<string>;
     rating: number;
+    description?: string | null;
   }>;
 };
 
@@ -25,6 +26,7 @@ export const ProductsDocument = gql`
       price
       images
       rating
+      description
     }
   }
 `;

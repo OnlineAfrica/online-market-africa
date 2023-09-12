@@ -4,6 +4,7 @@ type Product {
   price: Float!
   images: [String!]!
   rating: Float!
+  description: String
 }
 
 type Query {

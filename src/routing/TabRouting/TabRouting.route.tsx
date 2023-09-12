@@ -6,7 +6,6 @@ import {Account} from 'screens/Account/Account.screen';
 import {AppTab, AppTabRouting} from 'routing/routing.types';
 import {useTheme} from 'styled-components/native';
 import HomeIcon from '../../assets/icons/home.svg';
-import {HomeNavigator} from 'routing/HomeRouting/HomeNavigator.route';
 
 const Tab = createBottomTabNavigator<AppTab>();
 
@@ -30,7 +29,7 @@ export const AppTabs = () => {
       }}>
       <Tab.Screen
         name={AppTabRouting.HomeNav}
-        component={HomeNavigator}
+        component={Home}
         options={{
           title: 'Shop',
           tabBarIcon: ({color, size}) => (
