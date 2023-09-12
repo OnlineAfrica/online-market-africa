@@ -8,6 +8,7 @@ export const PRODUCTS_QUERY = gql`
       price
       images
       rating
+      description
     }
   }
 `;
