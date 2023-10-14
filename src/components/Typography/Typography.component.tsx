@@ -7,6 +7,8 @@ export const Typography = ({
   children,
   variant,
   testId = 'text',
+  align = 'auto',
+  ...rest
 }: TypographyTypes): JSX.Element => {
   const theme = useTheme();
 
@@ -24,6 +26,12 @@ export const Typography = ({
         return theme.font.variant.heading;
       case 'subtitle':
         return theme.font.variant.subtitle;
+      case 'title':
+        return theme.font.variant.title;
+      case 'light':
+        return theme.font.variant.light;
+      case 'button':
+        return theme.font.variant.button;
       default:
         return theme.font.variant.body1;
     }
@@ -31,7 +39,9 @@ export const Typography = ({
 
   return (
     <Container testID={testId}>
-      <TextVariant>{children}</TextVariant>
+      <TextVariant style={{textAlign: align}} {...rest}>
+        {children}
+      </TextVariant>
     </Container>
   );
 };

@@ -1,8 +1,7 @@
-import {styled} from 'styled-components/native';
+import styled from 'styled-components/native';
 
 export const Container = styled.ScrollView`
   flex: 1;
-  background-color: ${({theme}) => theme.colors.background.primary};
 `;
 
 export const StyleableImage = styled.Image`
@@ -11,5 +10,6 @@ export const StyleableImage = styled.Image`
 `;
 
 export const ProductCardContainer = styled.View`
-  margin: ${({theme}) => theme.spacing.m}px;
+  margin-horizontal: ${({theme}) => theme.spacing.s}px;
+  padding-bottom: ${({theme}) => theme.spacing.s}px;
 `;

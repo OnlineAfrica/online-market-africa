@@ -7,7 +7,10 @@ export const useProducts = (): {
   loading: boolean;
   error: ApolloError | undefined;
 } => {
-  const {data, loading, error} = useProductsQuery();
+  const {data, loading, error} = useProductsQuery({
+    fetchPolicy: 'cache-and-network',
+  });
+
   return {
     products: data?.products as Product[],
     loading,

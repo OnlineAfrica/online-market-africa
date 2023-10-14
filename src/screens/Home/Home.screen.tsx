@@ -5,32 +5,45 @@ import lang from 'utils/language/en.json';
 import {ProductCard} from 'components/ProductCard/ProductCard.component';
 import {FlatList} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import {HomeNavigatorRouting, HomeStackParamList} from 'routing/routing.types';
+import {AppStackParamList, ScreenNames} from 'routing/routing.types';
 import {useProducts} from './useProducts';
 import {Product} from 'generated/types';
+import {useAppContext} from 'providers/useAppContext';
+import {StackNavigationProp} from '@react-navigation/stack';
 
 export const Home = () => {
   const {products} = useProducts();
 
-  const navigation = useNavigation<HomeStackParamList>();
+  const navigation = useNavigation<StackNavigationProp<AppStackParamList>>();
 
-  const handleProductNavigation = (id: string) => {
-    return navigation.navigate(HomeNavigatorRouting.ProductDetails, {id});
+  const {toggleWishListItem, wishlistItems} = useAppContext();
+
+  const handleProductNavigation = (id: string, title: string) => {
+    return navigation.navigate(ScreenNames.ProductDetails, {
+      id,
+      title,
+    });
   };
 
   const renderProductData = ({item}: {item: Product}) => {
     return (
       <ProductCardContainer>
         <ProductCard
-          onPress={() => handleProductNavigation(item.id)}
+          onPress={() => handleProductNavigation(item.id, item.title)}
           imageUrl={item.images[0]}
           rating={item.rating?.toString()}
+          isLiked={wishlistItems.find(prd => prd.id === item.id) ? true : false}
+          onHandleLikePress={() => toggleWishListItem(item)}
           title={item.title}
           price={item.price.toString()}
         />
       </ProductCardContainer>
     );
   };
+
+  if (!products || products.length === 0) {
+    return <></>;
+  }
 
   return (
     <Container showsVerticalScrollIndicator={false}>

@@ -5,7 +5,15 @@
     "price": 10499.99,
     "description": "This is a really nice product. This is a really nice product. This is a really nice product. This is a really nice product.This is a really nice product. This is a really nice product. This is a really nice product. This is a really nice product.This is a really nice product. This is a really nice product. This is a really nice product. .\n\nThis is a really nice product.This is a really nice product. This is a really nice product. This is a really nice product. This is a really nice product.\n\nThis is a really nice product. This is a really nice product. This is a really nice product. This is a really nice product.This is a really nice product. .\n\nThis is a really nice product. This is a really nice product. This is a really nice product.This is a really nice product. This is a really nice product. This is a really nice product. This is a really nice product.This is a really nice product. This is a really nice product. This is a really nice product. This is a really nice product.",
     "images": ["https://picsum.photos/id/2/800/800"],
-    "rating": 4.3
+    "rating": 4.3,
+    "stock": 2,
+    "category": {
+      "type": "Electronics"
+    },
+    "vendor": {
+      "id": "213434r",
+      "name": "John Doe"
+    }
   },
   {
     "id": "012651",
@@ -13,7 +21,15 @@
     "price": 6999.99,
     "description": "This is a really nice product. This is a really nice product. This is a really nice product. This is a really nice product.This is a really nice product. This is a really nice product. This is a really nice product. This is a really nice product.",
     "images": ["https://picsum.photos/id/1/800/800"],
-    "rating": 4.7
+    "rating": 4.7,
+    "stock": 2,
+    "category": {
+      "type": "Electronics"
+    },
+    "vendor": {
+      "id": "213434r",
+      "name": "John Doe"
+    }
   },
   {
     "id": "434232",
@@ -21,7 +37,15 @@
     "price": 700,
     "description": "This is a really nice product. This is a really nice product. This is a really nice product. This is a really nice product.This is a really nice product. This is a really nice product. This is a really nice product. This is a really nice product.",
     "images": ["https://picsum.photos/id/3/800/800"],
-    "rating": 2.4
+    "rating": 2.4,
+    "stock": 2,
+    "category": {
+      "type": "Electronics"
+    },
+    "vendor": {
+      "id": "213434r",
+      "name": "John Doe"
+    }
   },
   {
     "id": "234235",
@@ -29,7 +53,15 @@
     "price": 199.99,
     "description": "This is a really nice product. This is a really nice product. This is a really nice product. This is a really nice product.This is a really nice product. This is a really nice product. This is a really nice product. This is a really nice product.",
     "images": ["https://picsum.photos/id/12/800/800"],
-    "rating": 3.2
+    "rating": 3.2,
+    "stock": 2,
+    "category": {
+      "type": "Electronics"
+    },
+    "vendor": {
+      "id": "213434r",
+      "name": "John Doe"
+    }
   },
   {
     "id": "4235555533",
@@ -37,7 +69,15 @@
     "price": 499.99,
     "description": "This is a really nice product. This is a really nice product. This is a really nice product. This is a really nice product.This is a really nice product. This is a really nice product. This is a really nice product. This is a really nice product.",
     "images": ["https://picsum.photos/id/176/800/800"],
-    "rating": 3.2
+    "rating": 3.2,
+    "stock": 2,
+    "category": {
+      "type": "Electronics"
+    },
+    "vendor": {
+      "id": "213434r",
+      "name": "John Doe"
+    }
   },
   {
     "id": "1234534",
@@ -45,7 +85,15 @@
     "price": 1399.99,
     "description": "This is a really nice product. This is a really nice product. This is a really nice product. This is a really nice product.This is a really nice product. This is a really nice product. This is a really nice product. This is a really nice product.",
     "images": ["https://picsum.photos/id/13/800/800"],
-    "rating": 2.9
+    "rating": 2.9,
+    "stock": 2,
+    "category": {
+      "type": "Electronics"
+    },
+    "vendor": {
+      "id": "213434r",
+      "name": "John Doe"
+    }
   },
   {
     "id": "6456546",
@@ -53,7 +101,15 @@
     "price": 749.99,
     "description": "This is a really nice product. This is a really nice product. This is a really nice product. This is a really nice product.This is a really nice product. This is a really nice product. This is a really nice product. This is a really nice product.",
     "images": ["https://picsum.photos/id/321/800/800"],
-    "rating": 2.6
+    "rating": 2.6,
+    "stock": 2,
+    "category": {
+      "type": "Electronics"
+    },
+    "vendor": {
+      "id": "213434r",
+      "name": "John Doe"
+    }
   },
   {
     "id": "212135",
@@ -61,7 +117,15 @@
     "price": 219.99,
     "description": "This is a really nice product. This is a really nice product. This is a really nice product. This is a really nice product.This is a really nice product. This is a really nice product. This is a really nice product. This is a really nice product.",
     "images": ["https://picsum.photos/id/115/800/800"],
-    "rating": 4.2
+    "rating": 4.2,
+    "stock": 2,
+    "category": {
+      "type": "Electronics"
+    },
+    "vendor": {
+      "id": "213434r",
+      "name": "John Doe"
+    }
   },
   {
     "id": "42334",
@@ -69,7 +133,15 @@
     "price": 1899.99,
     "description": "This is a really nice product. This is a really nice product. This is a really nice product. This is a really nice product.This is a really nice product. This is a really nice product. This is a really nice product. This is a really nice product.",
     "images": ["https://picsum.photos/id/113/800/800"],
-    "rating": 4.9
+    "rating": 4.9,
+    "stock": 2,
+    "category": {
+      "type": "Electronics"
+    },
+    "vendor": {
+      "id": "213434r",
+      "name": "John Doe"
+    }
   },
   {
     "id": "123432",
@@ -77,6 +149,14 @@
     "price": 1200,
     "description": "This is a really nice product. This is a really nice product. This is a really nice product. This is a really nice product.This is a really nice product. This is a really nice product. This is a really nice product. This is a really nice product.",
     "images": ["https://picsum.photos/id/123/800/800"],
-    "rating": 0
+    "rating": 0,
+    "stock": 2,
+    "category": {
+      "type": "Electronics"
+    },
+    "vendor": {
+      "id": "213434r",
+      "name": "John Doe"
+    }
   }
 ]

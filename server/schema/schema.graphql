@@ -1,13 +1,48 @@
+enum Categories {
+  Electronics
+  Clothing
+  Toys
+  Appliances
+  Pets
+  FurnitureAndDecor
+  FoodAndBeverage
+  Books
+  Miscellaneous
+}
+
+type CategorySpecifics {
+  size: [String]
+  color: [String]
+  brand: String
+  warranty: String
+}
+
+type Category {
+  id: ID!
+  type: Categories!
+  title: String!
+  specifics: CategorySpecifics
+}
+
+type Vendor {
+  id: ID!
+  name: String!
+}
+
 type Product {
   id: ID!
+  vendor: Vendor!
   title: String!
   price: Float!
   images: [String!]!
   rating: Float!
   description: String
+  category: Category!
+  stock: Int!
 }
 
 type Query {
   products: [Product!]!
   product(id: ID!): Product!
+  categories: [Category!]!
 }
