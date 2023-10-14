@@ -4,7 +4,7 @@ import {ButtonVariant} from './Button.types';
 export const ButtonContainer = styled.TouchableHighlight<{
   variant: ButtonVariant;
 }>`
-  margin: ${({theme}) => theme.spacing.xs}px ${({theme}) => theme.spacing.m}px;
+  margin: ${({theme}) => theme.spacing.xxs}px ${({theme}) => theme.spacing.l}px;
   padding: ${({theme}) => theme.spacing.xs}px;
   justify-content: center;
   align-items: center;
@@ -12,17 +12,15 @@ export const ButtonContainer = styled.TouchableHighlight<{
     variant === 'primary' &&
     css`
       background-color: ${theme.colors.background.buttonPrimary};
-      border: ${theme.spacing.tiny}px solid
-        ${theme.colors.background.buttonPrimary};
-      border-radius: ${theme.spacing.s}px;
+      border-radius: ${theme.spacing.xs}px;
     `}
   ${({variant, theme}) =>
     variant === 'secondary' &&
     css`
-      background-color: ${theme.colors.background.app};
+      background-color: ${theme.colors.background.transparent};
       border: ${theme.spacing.tiny}px solid
         ${theme.colors.background.buttonPrimary};
-      border-radius: ${theme.spacing.s}px;
+      border-radius: ${theme.spacing.xs}px;
     `}
 `;
 

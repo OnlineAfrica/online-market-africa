@@ -1,9 +1,9 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.View<{bgColor?: string}>`
-  margin: ${({theme}) => theme.spacing.xxs}px;
-  padding: ${({theme}) => theme.spacing.xxs}px;
-  border-radius: ${({theme}) => theme.spacing.m}px;
+  margin-vertical: ${({theme}) => theme.spacing.xxs}px;
+  padding: ${({theme}) => theme.spacing.xs}px;
+  width: 100%;
   background-color: ${({theme, bgColor}) =>
-    bgColor ?? theme.colors.background.secondary};
+    bgColor ?? theme.colors.background.appSecondary};
 `;

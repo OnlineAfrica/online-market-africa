@@ -3,6 +3,7 @@ import {Typography} from 'components/Typography/Typography.component';
 import {ButtonProps} from './Button.types';
 import {ButtonContainer, ContentContainer} from './Button.styles';
 import {useTheme} from 'styled-components/native';
+import {VariantType} from 'components/Typography/Typography.types';
 
 export const Button = ({
   title,
@@ -16,21 +17,21 @@ export const Button = ({
     switch (variant) {
       case 'primary':
         return theme.colors.background.buttonPressedPrimary;
-      case 'accent':
-        return;
       case 'secondary':
         return theme.colors.background.buttonPressedSecondary;
       default:
-        return;
+        return theme.colors.background.transparent;
     }
   }, [theme, variant]);
 
-  const textVariant = useMemo(() => {
+  const textVariant: VariantType = useMemo(() => {
     switch (variant) {
-      case 'primary' || 'secondary':
-        return 'body1';
+      case 'primary' || 'accent':
+        return 'light';
+      case 'secondary':
+        return 'button';
       case 'accent':
-        return 'accent';
+        return 'button';
       default:
         return 'body1';
     }

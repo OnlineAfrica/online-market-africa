@@ -4,6 +4,7 @@ export const fontSize: FontSizeTypes = {
   xxs: 6,
   xs: 8,
   s: 12,
+  sm: 14,
   m: 16,
   l: 18,
   xl: 20,

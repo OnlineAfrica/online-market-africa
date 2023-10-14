@@ -8,11 +8,14 @@ export interface ColorTypes {
     accent: string;
     text: string;
     lightText: string;
+    white: string;
     title: string;
     star: string;
   };
   background: {
     app: string;
+    appSecondary: string;
+    transparent: string;
     primary: string;
     secondary: string;
     accent: string;
@@ -24,12 +27,14 @@ export interface ColorTypes {
     buttonPressedAccent: string;
   };
   white: string;
+  border: string;
 }
 
 export interface FontSizeTypes {
   xxs: number;
   xs: number;
   s: number;
+  sm: number;
   m: number;
   l: number;
   xl: number;
@@ -39,15 +44,19 @@ export interface FontSizeTypes {
 
 export interface ThemeVariantTypes {
   heading: IStyledComponent<'native', Omit<TextProps, never>>;
+  title: IStyledComponent<'native', Omit<TextProps, never>>;
   subtitle: IStyledComponent<'native', Omit<TextProps, never>>;
   body1: IStyledComponent<'native', Omit<TextProps, never>>;
   body2: IStyledComponent<'native', Omit<TextProps, never>>;
   body3: IStyledComponent<'native', Omit<TextProps, never>>;
   accent: IStyledComponent<'native', Omit<TextProps, never>>;
+  light: IStyledComponent<'native', Omit<TextProps, never>>;
+  button: IStyledComponent<'native', Omit<TextProps, never>>;
 }
 
 export interface Spacing {
   tiny: number;
+  xxxs: number;
   xxs: number;
   xs: number;
   s: number;

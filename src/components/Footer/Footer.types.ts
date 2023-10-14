@@ -3,4 +3,6 @@ export interface FooterProps {
   primaryButtonOnPress: () => void;
   secondaryButtonText?: string;
   secondaryButtonOnPress?: () => void;
+  icon?: JSX.Element;
+  onIconPress?: () => void;
 }

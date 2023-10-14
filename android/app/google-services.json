@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "781297441196",
+    "project_id": "market-online-e19b3",
+    "storage_bucket": "market-online-e19b3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:781297441196:android:bb6d4edc086d0c32c58209",
+        "android_client_info": {
+          "package_name": "com.marketonline"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLKgSFCtmwiXHr1mRHIHbgcCBdVWGjmXw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

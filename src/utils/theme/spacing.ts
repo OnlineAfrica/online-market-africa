@@ -2,6 +2,7 @@ import {Spacing} from './types';
 
 export const spacing: Spacing = {
   tiny: 2,
+  xxxs: 3,
   xxs: 4,
   xs: 8,
   s: 12,

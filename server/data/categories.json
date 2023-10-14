@@ -1,0 +1,47 @@
+[
+    {
+        "id": "1",
+        "type": "Appliances",
+        "title": "Appliances"
+    },
+    {
+        "id": "2",
+        "type": "Books",
+        "title": "Books"
+    },
+    {
+        "id": "3",
+        "type": "Clothing",
+        "title": "Clothing"
+    },
+    {
+        "id": "4",
+        "type": "Electronics",
+        "title": "Electronics"
+    },
+    {
+        "id": "5",
+        "type": "FoodAndBeverage",
+        "title": "Food and Beverage"
+    },
+    {
+        "id": "6",
+        "type": "FurnitureAndDecor",
+        "title": "Furniture and Decor"
+    },
+    {
+        "id": "7",
+        "type": "Miscellaneous",
+        "title": "Miscellaneous"
+    },
+    {
+        "id": "8",
+        "type": "Pets",
+        "title": "Pets"
+    },
+    {
+        "id": "9",
+        "type": "Toys",
+        "title": "Toys"
+    }
+]

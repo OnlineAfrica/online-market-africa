@@ -1,6 +1,11 @@
 import React from 'react';
 import {FooterProps} from './Footer.types';
-import {FooterContainer} from './Footer.styles';
+import {
+  ButtonContainer,
+  FooterContainer,
+  IconContainer,
+  PrimaryButtonContainer,
+} from './Footer.styles';
 import {Button} from 'components/Button/Button.component';
 
 export const Footer = ({
@@ -8,14 +13,29 @@ export const Footer = ({
   primaryButtonOnPress,
   secondaryButtonOnPress,
   secondaryButtonText,
+  icon,
+  onIconPress,
 }: FooterProps): JSX.Element => {
   return (
     <FooterContainer>
-      <Button
-        variant="primary"
-        onPress={primaryButtonOnPress}
-        title={primaryButtonText}
-      />
+      {icon ? (
+        <PrimaryButtonContainer>
+          <ButtonContainer>
+            <Button
+              variant="primary"
+              onPress={primaryButtonOnPress}
+              title={primaryButtonText}
+            />
+          </ButtonContainer>
+          <IconContainer onPress={onIconPress}>{icon}</IconContainer>
+        </PrimaryButtonContainer>
+      ) : (
+        <Button
+          variant="primary"
+          onPress={primaryButtonOnPress}
+          title={primaryButtonText}
+        />
+      )}
       {secondaryButtonText && secondaryButtonOnPress && (
         <Button
           variant="secondary"

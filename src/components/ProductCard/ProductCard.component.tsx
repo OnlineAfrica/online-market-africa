@@ -1,11 +1,15 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
   ContentContainer,
   IconContainer,
   PressableContainer,
+  PressableSecondaryContainer,
   RatingContainer,
+  ContentSecondaryContainer,
   StyledImage,
   StyledImageContainer,
+  StyledSecondaryImage,
+  StyledSecondaryImageContainer,
 } from './ProductCard.styles';
 import {Typography} from 'components/Typography/Typography.component';
 import {ProductCardProps} from './ProductCard.types';
@@ -20,9 +24,50 @@ export const ProductCard = ({
   rating,
   title,
   onPress,
+  onHandleLikePress,
+  variant = 'main',
+  isLiked,
+  isLikeable = true,
+  isFirst = false,
+  isLast = false,
 }: ProductCardProps): JSX.Element => {
   const theme = useTheme();
-  const [isLiked, setIsLiked] = useState(false);
+
+  if (variant === 'secondary') {
+    return (
+      <PressableSecondaryContainer
+        isFirst={isFirst}
+        isLast={isLast}
+        onPress={onPress}>
+        <StyledSecondaryImageContainer>
+          <StyledSecondaryImage source={{uri: imageUrl}} />
+        </StyledSecondaryImageContainer>
+        <ContentSecondaryContainer>
+          <Typography variant="title">{title}</Typography>
+          <Typography variant="subtitle">R{price}</Typography>
+          <RatingContainer>
+            <StarOutline
+              width={26}
+              height={26}
+              color={theme.colors.foreground.star}
+            />
+            <Typography variant="body3">
+              {rating === '0' || !rating ? 'No Reviews yet' : rating}
+            </Typography>
+          </RatingContainer>
+        </ContentSecondaryContainer>
+        <IconContainer onPress={onHandleLikePress}>
+          {isLikeable ? (
+            isLiked ? (
+              <Heart width={29} height={29} />
+            ) : (
+              <HeartOutline width={30} height={30} />
+            )
+          ) : null}
+        </IconContainer>
+      </PressableSecondaryContainer>
+    );
+  }
 
   return (
     <PressableContainer
@@ -36,7 +81,7 @@ export const ProductCard = ({
         elevation: 4,
       }}>
       <StyledImageContainer>
-        <IconContainer onPress={() => setIsLiked(prev => !prev)}>
+        <IconContainer onPress={onHandleLikePress}>
           {isLiked ? (
             <Heart width={29} height={29} />
           ) : (
@@ -46,7 +91,7 @@ export const ProductCard = ({
         <StyledImage source={{uri: imageUrl}} />
       </StyledImageContainer>
       <ContentContainer>
-        <Typography variant="subtitle">{title}</Typography>
+        <Typography variant="title">{title}</Typography>
         <Typography variant="body2">R{price}</Typography>
         <RatingContainer>
           <StarOutline
