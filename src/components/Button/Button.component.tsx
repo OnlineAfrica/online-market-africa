@@ -9,6 +9,7 @@ export const Button = ({
   title,
   onPress,
   rightIcon,
+  isDisabled = false,
   variant,
 }: ButtonProps): JSX.Element => {
   const theme = useTheme();
@@ -39,7 +40,9 @@ export const Button = ({
 
   return (
     <ButtonContainer
+      isDisabled={isDisabled}
       underlayColor={underlayColor}
+      disabled={isDisabled}
       onPress={onPress}
       variant={variant}>
       <ContentContainer>

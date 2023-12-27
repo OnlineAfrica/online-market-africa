@@ -64,7 +64,6 @@ export const AppProvider = ({children}: {children: React.ReactNode}) => {
         const cartItem = storedItems.map(p =>
           p.id === product.id ? {...p, quantity: p.quantity + 1} : p,
         );
-        console.log(cartItem);
         setCartItems(cartItem);
         await storeItem(STORAGE_KEYS.CART_ITEMS, cartItem);
       } else {
@@ -100,6 +99,16 @@ export const AppProvider = ({children}: {children: React.ReactNode}) => {
     await storeItem(STORAGE_KEYS.CART_ITEMS, []);
   }, []);
 
+  const getCartTotal = useMemo(() => {
+    if (!cartItems) {
+      return 0;
+    }
+    return cartItems.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0,
+    );
+  }, [cartItems]);
+
   useEffect(() => {
     const getWishListItems = async () => {
       const storedItems = await getItem<Product[]>(STORAGE_KEYS.WISHLIST_ITEMS);
@@ -131,6 +140,7 @@ export const AppProvider = ({children}: {children: React.ReactNode}) => {
       addItemToCart,
       removeItemFromCart,
       clearCart,
+      getCartTotal,
       cartItems,
     };
   }, [
@@ -138,6 +148,7 @@ export const AppProvider = ({children}: {children: React.ReactNode}) => {
     cartItems,
     clearCart,
     removeItemFromCart,
+    getCartTotal,
     toggleWishListItem,
     wishlistItems,
   ]);
