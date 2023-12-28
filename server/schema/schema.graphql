@@ -1,3 +1,5 @@
+scalar DateTime
+
 enum Categories {
   Electronics
   Clothing
@@ -8,6 +10,12 @@ enum Categories {
   FoodAndBeverage
   Books
   Miscellaneous
+}
+
+enum OrderStatus {
+  Created
+  Shipped
+  Delivered
 }
 
 type CategorySpecifics {
@@ -39,6 +47,14 @@ type Product {
   description: String
   category: Category!
   stock: Int!
+}
+
+type Order {
+  id: ID!
+  reference: String!
+  dateCreated: DateTime!
+  status: OrderStatus!
+  products: [Product!]!
 }
 
 type Query {

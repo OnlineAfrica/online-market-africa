@@ -2,8 +2,8 @@ import styled from 'styled-components/native';
 
 export const PressableContainer = styled.Pressable`
   flex: 1;
-  width: 200px;
-  height: 300px;
+  width: 190px;
+  height: 290px;
   justify-content: center;
   align-items: center;
   border-top-left-radius: 12px;
@@ -29,8 +29,10 @@ export const PressableSecondaryContainer = styled.Pressable<{
 `;
 
 export const StyledImage = styled.Image`
-  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
   height: 100%;
+  background-color: ${({theme}) => theme.colors.background.skeleton};
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
 `;
@@ -62,7 +64,7 @@ export const ContentSecondaryContainer = styled.View`
 
 export const ContentContainer = styled.View`
   padding-vertical: ${({theme}) => theme.spacing.xxs}px;
-  padding-left: ${({theme}) => theme.spacing.xxs}px;
+  padding-left: ${({theme}) => theme.spacing.xs}px;
   width: 100%;
   height: 38%;
 `;
@@ -74,8 +76,19 @@ export const IconContainer = styled.Pressable`
   right: ${({theme}) => theme.spacing.s}px;
 `;
 
+export const CartIconContainer = styled.View`
+  position: absolute;
+  z-index: 1;
+  bottom: ${({theme}) => theme.spacing.s}px;
+  right: ${({theme}) => theme.spacing.s}px;
+`;
+
 export const RatingContainer = styled.View`
   flex-direction: row;
-  padding-left: ${({theme}) => theme.spacing.xxs}px;
   align-items: center;
+`;
+
+export const RowContainer = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
 `;

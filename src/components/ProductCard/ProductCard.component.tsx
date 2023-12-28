@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback, useState} from 'react';
 import {
   ContentContainer,
   IconContainer,
@@ -10,6 +10,7 @@ import {
   StyledImageContainer,
   StyledSecondaryImage,
   StyledSecondaryImageContainer,
+  CartIconContainer,
 } from './ProductCard.styles';
 import {Typography} from 'components/Typography/Typography.component';
 import {ProductCardProps} from './ProductCard.types';
@@ -17,6 +18,7 @@ import StarOutline from '../../assets/icons/star-outline.svg';
 import {useTheme} from 'styled-components/native';
 import Heart from '../../assets/icons/heart.svg';
 import HeartOutline from '../../assets/icons/heart-outline.svg';
+import {LoadingShimmers} from 'components/LoadingShimmers/LoadingShimmers.component';
 
 export const ProductCard = ({
   imageUrl,
@@ -27,11 +29,23 @@ export const ProductCard = ({
   onHandleLikePress,
   variant = 'main',
   isLiked,
+  loading = false,
   isLikeable = true,
   isFirst = false,
   isLast = false,
+  cartComponent,
 }: ProductCardProps): JSX.Element => {
   const theme = useTheme();
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleOnLoadStart = useCallback(() => {
+    setIsLoading(true);
+  }, []);
+
+  const handleOnLoadEnd = useCallback(() => {
+    setIsLoading(false);
+  }, []);
 
   if (variant === 'secondary') {
     return (
@@ -43,19 +57,26 @@ export const ProductCard = ({
           <StyledSecondaryImage source={{uri: imageUrl}} />
         </StyledSecondaryImageContainer>
         <ContentSecondaryContainer>
-          <Typography variant="title">{title}</Typography>
-          <Typography variant="subtitle">R{price}</Typography>
+          <Typography variant="title" loading={loading}>
+            {title}
+          </Typography>
+          <Typography variant="subtitle" loading={loading}>
+            R {price}
+          </Typography>
           <RatingContainer>
             <StarOutline
               width={26}
               height={26}
               color={theme.colors.foreground.star}
             />
-            <Typography variant="body3">
+            <Typography variant="body3" loading={loading}>
               {rating === '0' || !rating ? 'No Reviews yet' : rating}
             </Typography>
           </RatingContainer>
         </ContentSecondaryContainer>
+        {cartComponent && (
+          <CartIconContainer>{cartComponent}</CartIconContainer>
+        )}
         <IconContainer onPress={onHandleLikePress}>
           {isLikeable ? (
             isLiked ? (
@@ -81,25 +102,42 @@ export const ProductCard = ({
         elevation: 4,
       }}>
       <StyledImageContainer>
-        <IconContainer onPress={onHandleLikePress}>
-          {isLiked ? (
-            <Heart width={29} height={29} />
-          ) : (
-            <HeartOutline width={30} height={30} />
-          )}
-        </IconContainer>
-        <StyledImage source={{uri: imageUrl}} />
+        {!isLoading ? (
+          <>
+            <IconContainer onPress={onHandleLikePress}>
+              {isLiked ? (
+                <Heart width={29} height={29} />
+              ) : (
+                <HeartOutline width={30} height={30} />
+              )}
+            </IconContainer>
+            <StyledImage source={{uri: imageUrl}} />
+          </>
+        ) : (
+          <LoadingShimmers>
+            <StyledImage
+              onLoadStart={handleOnLoadStart}
+              onLoadEnd={handleOnLoadEnd}
+              source={{uri: imageUrl}}
+            />
+          </LoadingShimmers>
+        )}
       </StyledImageContainer>
+
       <ContentContainer>
-        <Typography variant="title">{title}</Typography>
-        <Typography variant="body2">R{price}</Typography>
+        <Typography variant="title" loading={loading}>
+          {title}
+        </Typography>
+        <Typography variant="body2" loading={loading}>
+          R{price}
+        </Typography>
         <RatingContainer>
           <StarOutline
             width={26}
             height={26}
             color={theme.colors.foreground.star}
           />
-          <Typography variant="body3">
+          <Typography variant="body3" loading={loading}>
             {rating === '0' || !rating ? 'No Reviews yet' : rating}
           </Typography>
         </RatingContainer>

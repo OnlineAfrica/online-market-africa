@@ -7,6 +7,8 @@ export interface ColorTypes {
     secondary: string;
     accent: string;
     text: string;
+    bodyLight: string;
+    danger: string;
     lightText: string;
     white: string;
     title: string;
@@ -18,7 +20,10 @@ export interface ColorTypes {
     transparent: string;
     primary: string;
     secondary: string;
+    disabled: string;
     accent: string;
+    skeleton: string;
+    loading: string;
     buttonPrimary: string;
     buttonSecondary: string;
     buttonAccent: string;
@@ -52,6 +57,7 @@ export interface ThemeVariantTypes {
   accent: IStyledComponent<'native', Omit<TextProps, never>>;
   light: IStyledComponent<'native', Omit<TextProps, never>>;
   button: IStyledComponent<'native', Omit<TextProps, never>>;
+  dangerText: IStyledComponent<'native', Omit<TextProps, never>>;
 }
 
 export interface Spacing {

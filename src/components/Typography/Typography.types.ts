@@ -9,12 +9,14 @@ export type VariantType =
   | 'title'
   | 'subtitle'
   | 'button'
+  | 'danger'
   | 'light';
 
 export type TextAlignType = 'auto' | 'center' | 'right' | 'left';
 
 export interface TypographyTypes extends TextProps {
   testId?: string;
+  loading?: boolean;
   children: string | string[];
   variant: VariantType;
   align?: TextAlignType;

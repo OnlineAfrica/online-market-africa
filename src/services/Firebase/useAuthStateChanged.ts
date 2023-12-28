@@ -11,7 +11,6 @@ export const useAuthStateChanged = (): {
 
   const onAuthStateChanged = (usr: FirebaseAuthTypes.User | null) => {
     setUser(usr);
-    console.log(usr);
     if (initializing) {
       setInitializing(false);
     }

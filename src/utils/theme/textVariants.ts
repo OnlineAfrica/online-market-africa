@@ -38,10 +38,10 @@ export const Body2 = styled.Text`
 `;
 
 export const Body3 = styled.Text`
-  color: ${({theme}) => theme.colors.foreground.text};
+  color: ${({theme}) => theme.colors.foreground.bodyLight};
   font-size: ${({theme}) => theme.font.fontSize.s}px;
   font-family: Arial;
-  font-weight: 500;
+  font-weight: 400;
 `;
 
 export const Light = styled.Text`
@@ -61,9 +61,16 @@ export const Accent = styled.Text`
 
 export const Button = styled.Text`
   color: ${({theme}) => theme.colors.foreground.accent};
-  font-size: ${({theme}) => theme.font.fontSize.m}px;
+  font-size: ${({theme}) => theme.font.fontSize.s}px;
   font-family: Arial;
   font-weight: 500;
+`;
+
+export const Danger = styled.Text`
+  color: ${({theme}) => theme.colors.foreground.danger};
+  font-size: ${({theme}) => theme.font.fontSize.s}px;
+  font-family: Arial;
+  font-weight: 400;
 `;
 
 export const textVariants: ThemeVariantTypes = {
@@ -76,4 +83,5 @@ export const textVariants: ThemeVariantTypes = {
   accent: Accent,
   light: Light,
   button: Button,
+  dangerText: Danger,
 };

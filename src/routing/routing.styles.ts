@@ -5,5 +5,5 @@ export const PressableIconContainer = styled.TouchableOpacity`
 `;
 
 export const PressableBackIconContainer = styled.TouchableOpacity`
-  padding-horizontal: ${({theme}) => theme.spacing.s}px;
+  padding-horizontal: ${({theme}) => theme.spacing.m}px;
 `;

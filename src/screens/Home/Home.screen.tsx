@@ -12,7 +12,7 @@ import {useAppContext} from 'providers/useAppContext';
 import {StackNavigationProp} from '@react-navigation/stack';
 
 export const Home = () => {
-  const {products} = useProducts();
+  const {products, loading} = useProducts();
 
   const navigation = useNavigation<StackNavigationProp<AppStackParamList>>();
 
@@ -32,6 +32,7 @@ export const Home = () => {
           onPress={() => handleProductNavigation(item.id, item.title)}
           imageUrl={item.images[0]}
           rating={item.rating?.toString()}
+          loading={loading}
           isLiked={wishlistItems.find(prd => prd.id === item.id) ? true : false}
           onHandleLikePress={() => toggleWishListItem(item)}
           title={item.title}

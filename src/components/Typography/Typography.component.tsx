@@ -1,12 +1,14 @@
 import React, {useMemo} from 'react';
-import {Container} from './Typography.styles';
+import {Container, LoadingContainer} from './Typography.styles';
 import {TypographyTypes} from './Typography.types';
 import {useTheme} from 'styled-components/native';
+import {LoadingShimmers} from 'components/LoadingShimmers/LoadingShimmers.component';
 
 export const Typography = ({
   children,
   variant,
   testId = 'text',
+  loading = false,
   align = 'auto',
   ...rest
 }: TypographyTypes): JSX.Element => {
@@ -32,10 +34,20 @@ export const Typography = ({
         return theme.font.variant.light;
       case 'button':
         return theme.font.variant.button;
+      case 'danger':
+        return theme.font.variant.dangerText;
       default:
         return theme.font.variant.body1;
     }
   }, [variant, theme]);
+
+  if (loading) {
+    return (
+      <LoadingShimmers>
+        <LoadingContainer />
+      </LoadingShimmers>
+    );
+  }
 
   return (
     <Container testID={testId}>
